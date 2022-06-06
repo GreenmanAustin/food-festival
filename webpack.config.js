@@ -19,7 +19,7 @@ const config = {
   module: {
     rules: [
       {
-        test: /\.(png|jpe?g|gif)$/i,
+        test: /\.jpg$/,
         use: [
           {
             loader: 'file-loader',
@@ -28,7 +28,7 @@ const config = {
               name(file) {
                 return '[path][name].[ext]';
               },
-              publicPath(url) {
+              publicPath: function(url) {
                 return url.replace('../', '/assets/');
               }
             }
